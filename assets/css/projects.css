@@ -1,0 +1,399 @@
+/* =========================================
+   Projects
+   ========================================= */
+
+.projects {
+  /* =======================================
+     Header
+     ======================================= */
+
+  .projects-header {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+
+    align-items: end;
+
+    gap: 60px;
+
+    margin-bottom: 70px;
+  }
+
+  .projects-header > p {
+    max-width: 420px;
+
+    margin: 0 0 5px auto;
+
+    color: var(--text-muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+  }
+
+  /* =======================================
+     Grid
+     ======================================= */
+
+  .projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 80px 28px;
+  }
+
+  /* =======================================
+     Project
+     ======================================= */
+
+  .project {
+    position: relative;
+
+    min-width: 0;
+
+    &.reveal:nth-child(even) {
+      animation-range: entry 10% entry 40%;
+    }
+
+    /* ---------------------------------------
+       Number
+       --------------------------------------- */
+
+    .project-number {
+      position: absolute;
+
+      top: -28px;
+      left: 0;
+
+      color: var(--text-faint);
+
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+
+      letter-spacing: 0.08em;
+
+      transition: color var(--transition);
+    }
+
+    /* =======================================
+       Image
+       ======================================= */
+
+    .project-image {
+      position: relative;
+
+      aspect-ratio: 16 / 10;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+            circle at 1px 1px,
+            rgba(255, 255, 255, 0.07) 1px,
+            transparent 0
+          )
+          0 0 / 22px 22px,
+        linear-gradient(135deg, #151815, #0d0f0d);
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      transition:
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+
+      &::before {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background: linear-gradient(
+          135deg,
+          transparent 35%,
+          rgba(200, 255, 61, 0.09),
+          transparent 65%
+        );
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition: opacity var(--transition);
+      }
+
+      /* Screenshot: riempie il riquadro tagliando i bordi, mantenendo
+         in vista la parte alta della pagina (navbar e titolo) */
+
+      img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center top;
+      }
+    }
+
+    /* =======================================
+       Project info
+       ======================================= */
+
+    .project-info {
+      display: grid;
+
+      grid-template-columns: 1fr auto;
+
+      align-items: end;
+
+      gap: 20px;
+
+      margin-top: 24px;
+
+      > div:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    h3 {
+      margin: 0;
+
+      color: var(--text);
+
+      font-size: 1.35rem;
+      font-weight: 650;
+
+      letter-spacing: -0.025em;
+    }
+
+    .project-info p {
+      max-width: 430px;
+
+      margin: 10px 0 0;
+
+      color: var(--text-muted);
+
+      font-size: 0.88rem;
+
+      line-height: 1.65;
+    }
+
+    /* =======================================
+       Technologies
+       ======================================= */
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 6px;
+
+      span {
+        padding: 6px 9px;
+
+        color: var(--text-muted);
+
+        background: rgba(255, 255, 255, 0.025);
+
+        border: 1px solid var(--border);
+        border-radius: 5px;
+
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+
+        letter-spacing: 0.03em;
+      }
+    }
+
+    /* =======================================
+       Project link (stretched: the whole card is clickable)
+       ======================================= */
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 7px;
+
+      color: var(--text-muted);
+
+      font-size: 0.72rem;
+      font-weight: 650;
+
+      letter-spacing: 0.07em;
+      white-space: nowrap;
+
+      text-transform: uppercase;
+
+      transition:
+        color var(--transition-fast),
+        gap var(--transition);
+
+      &::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+      }
+
+      span {
+        color: var(--accent);
+
+        font-size: 1rem;
+
+        transition: transform var(--transition);
+      }
+
+      &:focus-visible {
+        outline-offset: 6px;
+      }
+    }
+
+    /* =======================================
+       Hover / keyboard focus
+       ======================================= */
+
+    &:hover,
+    &:has(.project-link:focus-visible) {
+      .project-image {
+        transform: translateY(-4px);
+
+        border-color: rgba(200, 255, 61, 0.28);
+
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      .project-placeholder {
+        color: var(--accent);
+
+        letter-spacing: 0.22em;
+      }
+
+      .project-number {
+        color: var(--accent);
+      }
+
+      .project-link {
+        color: var(--text);
+
+        gap: 11px;
+
+        span {
+          transform: translate(2px, -2px);
+        }
+      }
+    }
+  }
+}
+
+/* =========================================
+   Featured project (first card, full width)
+   ========================================= */
+
+@media (min-width: 801px) {
+  .projects .project:first-child {
+    display: grid;
+
+    grid-column: 1 / -1;
+    grid-template-columns: 1.7fr 1fr;
+
+    align-items: end;
+
+    gap: 48px;
+
+    .project-info {
+      grid-template-columns: 1fr;
+
+      margin-top: 0;
+
+      .project-link {
+        justify-self: start;
+
+        margin-top: 8px;
+      }
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    .project-info p {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+/* =========================================
+   Tablet
+   ========================================= */
+
+@media (max-width: 800px) {
+  .projects {
+    .projects-header {
+      grid-template-columns: 1fr;
+
+      gap: 24px;
+
+      margin-bottom: 60px;
+    }
+
+    .projects-header > p {
+      margin: 0;
+
+      max-width: 500px;
+    }
+  }
+}
+
+/* =========================================
+   Mobile
+   ========================================= */
+
+@media (max-width: 600px) {
+  .projects {
+    .projects-grid {
+      grid-template-columns: 1fr;
+
+      gap: 70px;
+    }
+
+    .project {
+      .project-number {
+        top: -24px;
+      }
+
+      .project-info {
+        grid-template-columns: 1fr;
+
+        align-items: start;
+      }
+
+      .project-link {
+        justify-self: start;
+      }
+    }
+  }
+}
+
+/* =========================================
+   Reduced motion
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .projects {
+    .project-image,
+    .project-placeholder,
+    .project-link,
+    .project-link span {
+      transition: none;
+    }
+  }
+}

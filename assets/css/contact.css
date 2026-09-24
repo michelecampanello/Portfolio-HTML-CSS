@@ -1,0 +1,286 @@
+/* =========================================
+   Contact
+   ========================================= */
+
+.contact {
+  border-top: 1px solid var(--border);
+
+  .contact-header {
+    max-width: 850px;
+    margin-bottom: 90px;
+
+    .section-title span {
+      display: block;
+    }
+
+    p {
+      max-width: 560px;
+      margin-top: 32px;
+
+      color: var(--text-muted);
+
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 90px;
+    align-items: start;
+  }
+
+  /* -----------------------------------------
+     Info
+     ----------------------------------------- */
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+
+    .contact-label {
+      color: var(--text-muted);
+
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+
+    .contact-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+
+      a {
+        display: inline-flex;
+
+        &:focus-visible {
+          outline-offset: 6px;
+        }
+
+        img {
+          width: 28px;
+          height: 28px;
+
+          /* Le icone sono già verdi (--accent) nel file SVG: a riposo
+             le desaturo e le scurisco fino a un grigio simile a
+             --text-muted. Un <img> non si può ricolorare con fill. */
+          filter: grayscale(1) brightness(0.67);
+
+          transition: filter var(--transition-fast);
+        }
+
+        &:hover img,
+        &:focus-visible img {
+          filter: none;
+        }
+      }
+    }
+  }
+
+  /* -----------------------------------------
+     Form
+     ----------------------------------------- */
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      label {
+        color: var(--text-muted);
+
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+
+        padding: 14px 16px;
+
+        color: var(--text);
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+        border-radius: 8px;
+
+        font: inherit;
+        font-size: 1rem;
+
+        transition:
+          border-color var(--transition-fast),
+          background var(--transition-fast);
+
+        &:hover {
+          border-color: var(--border-strong);
+        }
+
+        &:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+
+          border-color: var(--accent);
+        }
+
+        /* Solo dopo l'interazione dell'utente */
+        &:user-invalid {
+          border-color: var(--danger);
+        }
+      }
+
+      textarea {
+        min-height: 160px;
+
+        line-height: 1.6;
+
+        resize: vertical;
+      }
+    }
+
+    .form-trap {
+      position: absolute;
+
+      left: -9999px;
+
+      width: 1px;
+      height: 1px;
+
+      overflow: hidden;
+    }
+
+    .form-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+    }
+
+    .form-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 48px;
+
+      padding: 0 22px;
+
+      background: var(--accent);
+      color: var(--on-accent);
+
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 750;
+
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        opacity var(--transition-fast);
+
+      &:hover:not(:disabled) {
+        transform: translateY(-2px);
+
+        box-shadow: 0 8px 30px rgba(200, 255, 61, 0.16);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      &:disabled {
+        opacity: 0.6;
+
+        cursor: progress;
+      }
+    }
+
+    .form-status {
+      margin: 0;
+
+      color: var(--text-muted);
+
+      font-size: 0.9rem;
+      line-height: 1.5;
+
+      &[data-state="success"] {
+        color: var(--accent);
+      }
+
+      &[data-state="error"] {
+        color: var(--danger);
+      }
+    }
+  }
+}
+
+/* =========================================
+   Tablet
+   ========================================= */
+
+@media (max-width: 800px) {
+  .contact {
+    .contact-header {
+      margin-bottom: 65px;
+    }
+
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+  }
+}
+
+/* =========================================
+   Mobile
+   ========================================= */
+
+@media (max-width: 600px) {
+  .contact {
+    .contact-header p {
+      font-size: 0.95rem;
+    }
+
+    .contact-info .contact-socials {
+      margin-top: 35px;
+    }
+
+    .contact-form .form-button {
+      width: 100%;
+    }
+  }
+}
+
+/* =========================================
+   Reduced motion
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact {
+    .contact-email,
+    .contact-email span,
+    .contact-socials img,
+    .form-field input,
+    .form-field textarea,
+    .form-button {
+      transition: none;
+    }
+  }
+}

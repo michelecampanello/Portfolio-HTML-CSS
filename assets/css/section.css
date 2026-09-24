@@ -1,0 +1,75 @@
+/* =========================================
+   Shared section layout
+   ========================================= */
+
+.section {
+  position: relative;
+
+  width: min(var(--container), calc(100% - var(--gutter) * 2));
+
+  margin-inline: auto;
+  padding-block: var(--section-gap);
+}
+
+/* Pagine interne (senza hero): lasciano spazio all'header fisso e la
+   prima sezione non ha bordo superiore */
+
+.main-page {
+  padding-top: var(--header-height);
+
+  > .section:first-child {
+    border-top: 0;
+  }
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 24px;
+
+  color: var(--accent);
+
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  &::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--accent);
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px var(--accent);
+  }
+}
+
+.section-title {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: clamp(3rem, 6.5vw, 5.75rem);
+  font-weight: 700;
+
+  letter-spacing: -0.06em;
+  line-height: 0.94;
+
+  span {
+    color: var(--accent);
+  }
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+}
