@@ -5,13 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#090a0a" />
+    <meta name="author" content="Michele Campanello" />
     <meta
       name="description"
-      content="Michele Campanello — web developer. Interfacce veloci, intuitive e scalabili."
+      content="Michele Campanello — sviluppatore web e mobile. Interfacce veloci, intuitive e scalabili con TypeScript, Node.js e Flutter."
     />
-    <title>Michele Campanello</title>
+    <title>Michele Campanello — Sviluppatore web</title>
+
+    <!-- Open Graph / anteprime social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:title" content="Michele Campanello — Sviluppatore web" />
+    <meta
+      property="og:description"
+      content="Interfacce veloci, intuitive e scalabili. Portfolio di progetti web e mobile."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="og:url"
+      content="https://michelecampanello.github.io/Portfolio-HTML-CSS/"
+    />
+    <meta
+      property="og:image"
+      content="https://michelecampanello.github.io/Portfolio-HTML-CSS/assets/img/page.png"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/section.css" />
+    <link rel="stylesheet" href="assets/css/projects.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="assets/js/contact.js" defer></script>
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
   </head>
   <body id="top">
     <a href="#main" class="skip-link">Vai al contenuto</a>
@@ -19,34 +66,30 @@
     <header class="header">
       <a href="#top" class="logo">Michele Campanello</a>
 
-      <ul class="menu">
-        <li>
-          <a href="#projects">Progetti</a>
-        </li>
-        <li>
-          <a href="#contact">Contatti</a>
-        </li>
-        <li>
-          <a href="chi-sono.html">Chi sono</a>
-        </li>
-      </ul>
+      <nav aria-label="Navigazione principale">
+        <ul class="menu">
+          <li><a href="#projects">Progetti</a></li>
+          <li><a href="#contact">Contatti</a></li>
+          <li><a href="chi-sono.html">Chi sono</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="main" id="main">
-      <section class="hero">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
-          <span class="hero-label"> SVILUPPATORE WEB / 2026 </span>
+          <span class="hero-label">SVILUPPATORE WEB / 2026</span>
 
-          <h1>
-            Costruisco
-            <span>interfacce</span>
-            che sembrano inevitabili.
+          <h1 id="hero-title">
+            Dall'
+            <span>idea</span>
+            a un'interfaccia che funziona.
           </h1>
 
-          <p>Trasformo idee in esperienze veloci, intuitive e scalabili</p>
+          <p>Trasformo idee in esperienze veloci, intuitive e scalabili.</p>
 
           <div class="hero-actions">
-            <a href="#projects" class="hero-button"> Vedi i miei lavori </a>
+            <a href="#projects" class="hero-button">Vedi i miei lavori</a>
 
             <a href="chi-sono.html" class="hero-link">
               Chi sono
@@ -58,8 +101,8 @@
         <div class="hero-visual" aria-hidden="true">
           <div class="hero-card">
             <div class="hero-card-bar">
-              <span>michele.ts</span>
-              <span>TS</span>
+              <span>michele.js</span>
+              <span>JS</span>
             </div>
 
             <pre
@@ -81,12 +124,16 @@
         </div>
       </section>
 
-      <section class="projects section" id="projects">
+      <section
+        class="projects section"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
         <div class="projects-header reveal">
           <div>
             <span class="section-label">LAVORI SELEZIONATI</span>
 
-            <h2 class="section-title">
+            <h2 class="section-title" id="projects-title">
               Cosa ho
               <span>costruito.</span>
             </h2>
@@ -100,19 +147,17 @@
 
         <div class="projects-grid">
           <article class="project reveal">
-            <div class="project-number">01</div>
+            <div class="project-number" aria-hidden="true">01</div>
 
             <div class="project-image">
-              <div class="project-image">
-                <img
-                  src="assets/img/auralea.png"
-                  alt=""
-                  width="3834"
-                  height="1873"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+              <img
+                src="assets/img/auralea.webp"
+                alt="Schermata di Auralea, app di finanza personale"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
 
             <div class="project-info">
@@ -122,36 +167,27 @@
                 <p>
                   Un'applicazione di finanza personale cross-platform pensata
                   per rendere semplici da capire dati finanziari complessi. Al
-                  momento non è disponibile un'anteprima
+                  momento non è disponibile un'anteprima online.
                 </p>
               </div>
 
-              <div class="project-meta">
-                <span>Flutter</span>
-                <span>SQLite</span>
-                <span>UX / UI</span>
-              </div>
-
-              <!-- <a
-                href="#"
-                class="project-link"
-                aria-label="Vedi il progetto Finance Dashboard"
-              >
-                Vedi progetto
-                <span aria-hidden="true">↗</span>
-              </a> -->
+              <ul class="project-meta" aria-label="Tecnologie utilizzate">
+                <li>Flutter</li>
+                <li>SQLite</li>
+                <li>UX / UI</li>
+              </ul>
             </div>
           </article>
 
           <article class="project reveal">
-            <div class="project-number">02</div>
+            <div class="project-number" aria-hidden="true">02</div>
 
             <div class="project-image">
               <img
-                src="assets/img/mura.png"
-                alt=""
-                width="3834"
-                height="1873"
+                src="assets/img/mura.webp"
+                alt="Schermata della landing page di Mura Immobiliari"
+                width="800"
+                height="600"
                 loading="lazy"
                 decoding="async"
               />
@@ -162,19 +198,21 @@
                 <h3>Mura Immobiliari</h3>
 
                 <p>
-                  Una semplice landing page di un'agenzia immobiliare fittizia
+                  Una semplice landing page di un'agenzia immobiliare fittizia.
                 </p>
               </div>
 
-              <div class="project-meta">
-                <span>React</span>
-                <span>TypeScript</span>
-              </div>
+              <ul class="project-meta" aria-label="Tecnologie utilizzate">
+                <li>React</li>
+                <li>TypeScript</li>
+              </ul>
 
               <a
                 href="https://muraimmobiliari.netlify.app/"
                 class="project-link"
-                aria-label="Vedi il progetto Mura Immobiliari"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Vedi il progetto Mura Immobiliari (si apre in una nuova scheda)"
               >
                 Vedi progetto
                 <span aria-hidden="true">↗</span>
@@ -184,11 +222,15 @@
         </div>
       </section>
 
-      <section class="contact section" id="contact">
+      <section
+        class="contact section"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
         <div class="contact-header reveal">
           <span class="section-label">CONTATTI</span>
 
-          <h2 class="section-title">
+          <h2 class="section-title" id="contact-title">
             Costruiamo
             <span>qualcosa.</span>
           </h2>
@@ -206,17 +248,29 @@
             <div class="contact-socials">
               <a
                 href="https://github.com/michelecampanello"
-                aria-label="GitHub"
+                aria-label="GitHub (si apre in una nuova scheda)"
                 target="_blank"
+                rel="noopener noreferrer"
               >
-                <img src="assets/img/github.svg" alt="" />
+                <img
+                  src="assets/img/github.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
               </a>
               <a
                 href="https://www.linkedin.com/in/michele-campanello-82365325a/"
-                aria-label="LinkedIn"
+                aria-label="LinkedIn (si apre in una nuova scheda)"
                 target="_blank"
+                rel="noopener noreferrer"
               >
-                <img src="assets/img/linkedin.svg" alt="" />
+                <img
+                  src="assets/img/linkedin.svg"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
               </a>
             </div>
           </div>
@@ -226,6 +280,12 @@
             action="https://formspree.io/f/xeaogeyk"
             method="post"
           >
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nuovo messaggio dal portfolio"
+            />
+
             <div class="form-field">
               <label for="contact-name">NOME</label>
               <input
@@ -245,6 +305,7 @@
                 id="contact-email"
                 name="email"
                 autocomplete="email"
+                inputmode="email"
                 maxlength="150"
                 required
               />

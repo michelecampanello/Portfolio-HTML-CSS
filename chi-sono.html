@@ -5,12 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#090a0a" />
+    <meta name="author" content="Michele Campanello" />
     <meta
       name="description"
-      content="Chi è Michele Campanello: sviluppatore web tra frontend, backend e app mobile."
+      content="Chi è Michele Campanello: sviluppatore web tra frontend, backend e app mobile con Flutter."
     />
     <title>Chi sono — Michele Campanello</title>
+
+    <!-- Open Graph / anteprime social -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:title" content="Chi sono — Michele Campanello" />
+    <meta
+      property="og:description"
+      content="Sviluppatore web tra frontend, backend e app mobile."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/section.css" />
+    <link rel="stylesheet" href="assets/css/projects.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
   </head>
   <body id="top">
     <a href="#main" class="skip-link">Vai al contenuto</a>
@@ -18,25 +58,21 @@
     <header class="header">
       <a href="index.html" class="logo">Michele Campanello</a>
 
-      <ul class="menu">
-        <li>
-          <a href="index.html#projects">Progetti</a>
-        </li>
-        <li>
-          <a href="index.html#contact">Contatti</a>
-        </li>
-        <li>
-          <a href="chi-sono.html" aria-current="page">Chi sono</a>
-        </li>
-      </ul>
+      <nav aria-label="Navigazione principale">
+        <ul class="menu">
+          <li><a href="index.html#projects">Progetti</a></li>
+          <li><a href="index.html#contact">Contatti</a></li>
+          <li><a href="chi-sono.html" aria-current="page">Chi sono</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="main main-page" id="main">
-      <section class="about section">
+      <section class="about section" aria-labelledby="about-title">
         <div class="about-header reveal">
           <span class="section-label">CHI SONO</span>
 
-          <h1 class="section-title">
+          <h1 class="section-title" id="about-title">
             Dietro il
             <span>codice.</span>
           </h1>
@@ -45,30 +81,35 @@
         <div class="about-content">
           <div class="about-image reveal">
             <img
-              src="assets/img/profile.jpg"
+              src="assets/img/profile.webp"
               alt="Ritratto di Michele Campanello"
+              decoding="async"
             />
-
-            <span class="about-image-label"> OXIDE / 2026 </span>
           </div>
 
           <div class="about-info reveal">
             <div class="about-description">
               <p class="about-intro">
-                Sono uno sviluppatore web interessato a trasformare idee
-                complesse in esperienze digitali semplici, veloci e intuitive.
+                Sono uno sviluppatore web alle prime armi. Non ho ancora
+                maturato esperienze lavorative ma ambisco ad approfondire sempre
+                di più questo immenso settore.
               </p>
 
               <p>
-                Mi piace lavorare sia sul frontend che sul backend, con
-                particolare attenzione alla qualità del codice, all'architettura
-                e ai dettagli dell'interfaccia.
+                Utilizzo strumenti di intelligenza artificiale per aumentare la
+                produttività ma non mi lascio sostituire: comprendo il codice e
+                lo modifico a mio piacimento, seguendo le best practice.
               </p>
 
               <p>
-                Quando non sto scrivendo codice, mi piace esplorare nuove
-                tecnologie, sperimentare con nuovi progetti e continuare a
-                migliorare ciò che costruisco.
+                Sto sviluppando un'applicazione di gestione delle finanze
+                personali chiamata Auralea. È ancora un prototipo ma in futuro
+                potrebbe diventare una startup
+              </p>
+
+              <p>
+                I miei altri hobby includono guardare film e serie TV, giocare
+                ai vidiegiochi, ascoltare musica e suonare la chitarra elettrica
               </p>
             </div>
 

@@ -1,7 +1,3 @@
-/* =========================================
-   About
-   ========================================= */
-
 .about {
   border-top: 1px solid var(--border);
 
@@ -82,6 +78,14 @@
         filter: grayscale(0%);
         opacity: 1;
         transform: scale(1.03);
+      }
+    }
+
+    /* Su touch non c'è hover: la foto resta a colori */
+    @media (hover: none) {
+      img {
+        filter: none;
+        opacity: 1;
       }
     }
 
